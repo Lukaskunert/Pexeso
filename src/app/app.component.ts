@@ -37,16 +37,16 @@ export class AppComponent {
     this.BREH = true;
     this.LUL = true;
     this.karticky.length = this.number * 2;
-  }
-  if (this.number < 6) {
-    var BREH = this.karticky.length,temporaryValue,randomIndex;
-  } else if (this.number = 0) {
-    this.number = 0;
-  } else {
-    System.out.println("nešlo nic");
-    this.number = null;
-  }
 
+    if (this.number < 6) {
+      var BREH = this.karticky.length,temporaryValue,randomIndex;
+    } else if (this.number = 0) {
+      this.number = 0;
+    } else {
+      System.out.println("nešlo nic");
+      this.number = null;
+    }
+  }
   // netušim co dal
 
   otocit(clicknutaKarticka: Karticka): void {
