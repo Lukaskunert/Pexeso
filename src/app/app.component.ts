@@ -13,10 +13,8 @@ interface  Karticka{
 export class AppComponent {
   title = 'Pexesou';
 
-  savedCard: Karticka | null = null;
-  number: number;
-  BREH: boolean;
-  LUL: boolean;
+    BREH: boolean;
+    LUL: boolean;
 
   karticky: Karticka[] = [
     {ikona: "1", otoceno: false},
@@ -33,21 +31,26 @@ export class AppComponent {
     {ikona: "6", otoceno: false}
   ];
 
+  savedCard: Karticka | null = null;
+  number: number;
+
   clickedButton() {
     this.BREH = true;
     this.LUL = true;
-    this.karticky.length = this.number * 2;
+    this.karticky.length = this.number;
 
-    if (this.number < 6) {
-      var BREH = this.karticky.length,temporaryValue,randomIndex;
-    } else if (this.number = 0) {
-      this.number = 0;
-    } else {
-      System.out.println("nešlo nic");
-      this.number = null;
+    var currentIndex = this.karticky.length, temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = this.karticky[currentIndex];
+      this.karticky[currentIndex] = this.karticky[randomIndex];
+      this.karticky[randomIndex] = temporaryValue;
     }
+    console.log(this.karticky);
+    return this.karticky;
   }
-  // netušim co dal
 
   otocit(clicknutaKarticka: Karticka): void {
     if (clicknutaKarticka.otoceno === true) {
