@@ -8,6 +8,7 @@ import {AbstractControl, NG_VALIDATORS, ValidationErrors} from '@angular/forms';
 
 export class MinDirective {
   pMin!: number | string;
+
   constructor(
     private readonly el: ElementRef<HTMLElement>
   ){}

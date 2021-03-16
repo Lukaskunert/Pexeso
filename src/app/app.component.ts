@@ -13,30 +13,29 @@ interface  Karticka{
 export class AppComponent {
   title = 'Pexesou';
 
-    BREH: boolean;
-    LUL: boolean;
-
+  contentVisible = false;
+  buttonVisibility = false;
   karticky: Karticka[] = [
-    {ikona: "1", otoceno: false},
-    {ikona: "1", otoceno: false},
-    {ikona: "2", otoceno: false},
-    {ikona: "2", otoceno: false},
-    {ikona: "3", otoceno: false},
-    {ikona: "3", otoceno: false},
-    {ikona: "4", otoceno: false},
-    {ikona: "4", otoceno: false},
-    {ikona: "5", otoceno: false},
-    {ikona: "5", otoceno: false},
-    {ikona: "6", otoceno: false},
-    {ikona: "6", otoceno: false}
+    {ikona: '1', otoceno: false},
+    {ikona: '1', otoceno: false},
+    {ikona: '2', otoceno: false},
+    {ikona: '2', otoceno: false},
+    {ikona: '3', otoceno: false},
+    {ikona: '3', otoceno: false},
+    {ikona: '4', otoceno: false},
+    {ikona: '4', otoceno: false},
+    {ikona: '5', otoceno: false},
+    {ikona: '5', otoceno: false},
+    {ikona: '6', otoceno: false},
+    {ikona: '6', otoceno: false}
   ];
 
   savedCard: Karticka | null = null;
-  number: number;
+  number = 0;
 
-  clickedButton() {
-    this.BREH = true;
-    this.LUL = true;
+  clickedButton(): void {
+    this.contentVisible = true;
+    this.buttonVisibility = true;
     this.karticky.length = this.number;
 
     var currentIndex = this.karticky.length, temporaryValue, randomIndex;
