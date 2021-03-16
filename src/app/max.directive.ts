@@ -14,7 +14,8 @@ import {AbstractControl, NG_VALIDATORS, ValidationErrors} from '@angular/forms';
   @Input('appMax')
   set max(value: number | string) {
     this.pMax = value;
-    this.el.nativeElement.setAttribute('maximum', `${value}`);}
+    this.el.nativeElement.setAttribute('maximum', `${value}`);
+  }
   validate(control: AbstractControl): ValidationErrors | null {
     const value = control.value;
     if (typeof value === 'number' && value > this.pMax) {

@@ -38,7 +38,9 @@ export class AppComponent {
     this.buttonVisibility = true;
     this.karticky.length = this.number;
 
-    var currentIndex = this.karticky.length, temporaryValue, randomIndex;
+    let currentIndex = this.karticky.length;
+    let randomIndex!: number;
+    let temporaryValue!: Karticka;
 
     while (0 !== currentIndex) {
       randomIndex = Math.floor(Math.random() * currentIndex);
@@ -48,7 +50,6 @@ export class AppComponent {
       this.karticky[randomIndex] = temporaryValue;
     }
     console.log(this.karticky);
-    return this.karticky;
   }
 
   otocit(clicknutaKarticka: Karticka): void {
