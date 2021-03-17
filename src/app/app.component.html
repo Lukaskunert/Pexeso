@@ -1,8 +1,8 @@
 <div class="" style="width: 100vw; height: 100vw">
-  <form>
+  <form #form="ngForm">
     <div>
       <input type="number" [appMax]="10" [appMin]="2" #numberEl="ngModel" [(ngModel)]="number">
-      <button (click)="clickedButton()" [disabled]="form:invalid">IDK</button>
+      <button (click)="clickedButton()" [disabled]="form.invalid">IDK</button>
     </div>
   </form>
   <div *ngFor="let karta of karticky" class="border p-2" (click)="otocit(karta)" style="cursor: pointer; height: 200px; width: 200px">
